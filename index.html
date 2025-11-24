@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justins Portfolio</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0e0e10;
+            color: #e0e0e0;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(180deg, #000000 0%, #111115 100%);
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(0, 150, 255, 0.5);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            background: #0b0b0d;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(0, 150, 255, 0.3);
+            box-shadow: 0 0 12px rgba(0,150,255,0.2);
+        }
+
+        nav a {
+            color: #cfe9ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: 0.25s ease;
+            letter-spacing: 0.5px;
+        }
+
+        nav a:hover {
+            text-shadow: 0 0 8px rgba(0, 150, 255, 0.8);
+            color: #ffffff;
+        }
+
+        
+        h2 {
+            font-size: 2.5rem;
+            color: #00bfff;
+            text-align: center;
+            margin-bottom: 2rem;
+            
+        }
+
+        #about {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .about-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1 1 65%;
+            padding: 1.5rem;
+            border: 2px solid rgba(0, 150, 255, 0.5);
+            border-radius: 10px;
+            background: #141418;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cfe9ff;
+        }
+
+        .about-image {
+            flex: 0 0 auto;
+            width: 250px;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid rgba(0, 150, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+        }
+
+
+        #projects {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .projects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: #141418;
+            border: 2px solid rgba(0, 150, 255, 0.5);
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 20px rgba(0, 150, 255, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card-content {
+            padding: 1rem;
+        }
+
+        .project-card-content h3 {
+            margin: 0 0 0.5rem 0;
+            color: #00bfff;
+        }
+
+        .project-card-content p {
+            margin: 0;
+            color: #cfe9ff;
+            font-size: 1rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .contact-bars {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: #cfe9ff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background: #141418;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 0 12px rgba(0, 150, 255, 0.2);
+}
+
+.contact-bar img.contact-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 1rem;
+}
+
+.contact-bar.github:hover {
+    transform: translateX(5px);
+    border-color: #71036d;
+    box-shadow: 0 0 20px #6cc64433;
+}
+
+.contact-bar.linkedin:hover {
+    transform: translateX(5px);
+    border-color: #0a66c2;
+    box-shadow: 0 0 20px #0a66c233;
+}
+
+.contact-bar.email:hover {
+    transform: translateX(5px);
+    border-color: #ea0707;
+    box-shadow: 0 0 20px #ff572233;
+}
+
+@media (max-width: 500px) {
+    .contact-bar {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    .contact-bar img.contact-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
+        @media (max-width: 500px) {
+            .about-container {
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .about-text, .about-image {
+                flex: 1 1 100%;
+            }
+
+            #contacts {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>Justin la Faille</header>
+
+<nav>
+<a href="#about">About Me</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about" class="fade-in">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am a C# and Unity developer passionate about building interactive experiences,
+        gameplay systems, and tools. I enjoy turning ideas into working prototypes and
+        polished game features.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="images/JustinPicture.jpeg" alt="Justin la Faille">
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="fade-in">
+  <h2>PROJECTS</h2>
+  <div class="projects-list">
+    <a href="catparty.html" class="project-card">
+      <img src="images/CatPartyImage.png" alt="Cat Party">
+      <div class="project-card-content">
+        <h3>Cat Party</h3>
+        <p>This is a party game where you play on a board and play minigames to win the game.</p>
+      </div>
+    </a>
+
+    <a href="pouventure.html" class="project-card">
+      <img src="images/PouventureImage.png" alt="Pouventure">
+      <div class="project-card-content">
+        <h3>Pouventure</h3>
+        <p>This is a turn based dungeon crawler game where you have to get to the end.
+        </p>
+      </div>
+    </a>
+
+    <a href="honeytowers.html" class="project-card">
+      <img src="images/HoneyTowers.png" alt="HoneyTowers">
+      <div class="project-card-content">
+        <h3>Honey Towers</h3>
+        <p>This is a tower defense game where you play as a bee
+            and you have to defend your hive from ants and wasps.
+        </p>
+      </div>
+    </a>
+
+    <a href="wizcape.html" class="project-card">
+      <img src="images/WizcapeImage.png" alt="Wizcape">
+      <div class="project-card-content">
+        <h3>Wizcape</h3>
+        <p>This is a turn based dungeon crawler game where you have to get to the end.
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="contacts" class="fade-in">
+    <h2>Contacts</h2>
+    <div class="contact-bars">
+        <a href="https://github.com/YourGitHubUsername" target="_blank" class="contact-bar github">
+            <img src="images/github.png" alt="GitHub" class="contact-icon">
+            <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/YourLinkedInProfile/" target="_blank" class="contact-bar linkedin">
+            <img src="images/linkedin.png" alt="LinkedIn" class="contact-icon">
+            <span>LinkedIn</span>
+        </a>
+        <a href="mailto:youremail@example.com" class="contact-bar email">
+            <img src="images/email.png" alt="Email" class="contact-icon">
+            <span>Email Me</span>
+        </a>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const appearOnScroll = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+});
+</script>
+
+</body>
+</html>
