@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects (JSON)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="site-header">
+  <div class="site-title">Justin la Faille</div>
+  <nav>
+    <a href="index.html">About Me</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contacts">Contact</a>
+  </nav>
+</header>
+
+<main id="projects-container">
+  <h2 style="text-align:center;margin-top:1.5rem;color:var(--accent-2)">Projects</h2>
+  <div id="list"></div>
+</main>
+
+<script>
+async function load() {
+  try {
+    const res = await fetch('projects.json');
+    if (!res.ok) throw new Error('projects.json not found');
+    const projects = await res.json();
+    const list = document.getElementById('list');
+
+    // if an id query param is present, render only that project
+    const params = new URL(window.location.href).searchParams;
+    const id = params.get('id');
+    const items = id ? projects.filter(p => p.id === id) : projects;
+
+    if (id && items.length === 0) {
+      list.innerHTML = '<p style="padding:1.25rem;color:#f88">Project not found.</p>';
+      return;
+    }
+
+    items.forEach(p => {
+      const panel = document.createElement('section');
+      panel.className = 'project';
+      panel.id = p.id;
+      panel.style.margin = '2rem auto';
+      panel.style.maxWidth = '1100px';
+
+      // Title block
+      // Add an inline Back button that uses history.back() with a fallback to index.html
+      const backBtn = document.createElement('a');
+      backBtn.className = 'back-button';
+      backBtn.href = 'index.html';
+      backBtn.textContent = '← Back';
+      // Keep the aesthetic but render inline above the title
+      backBtn.style.position = 'static';
+      backBtn.style.display = 'inline-flex';
+      backBtn.style.marginBottom = '0.8rem';
+      backBtn.onclick = (e) => {
+        e.preventDefault();
+        try {
+          if (window.history && window.history.length > 1) window.history.back();
+          else window.location.href = 'index.html';
+        } catch (err) { window.location.href = 'index.html'; }
+      };
+
+      const titleBlock = document.createElement('div');
+      titleBlock.className = 'project-title';
+      const h1 = document.createElement('h1'); h1.textContent = p.title;
+      // insert back button above title
+      titleBlock.appendChild(h1);
+      const subtitle = document.createElement('p'); subtitle.className = 'project-subtitle'; subtitle.textContent = p.subtitle || '';
+      const meta = document.createElement('div'); meta.className = 'project-meta';
+      (p.tags||[]).forEach(t => {
+        const span = document.createElement('span'); span.className = 'lang'; span.textContent = t; meta.appendChild(span);
+      });
+      titleBlock.appendChild(subtitle); titleBlock.appendChild(meta);
+
+      // place back button at the very top of the panel
+      panel.appendChild(backBtn);
+
+      // Grid
+      const grid = document.createElement('div'); grid.className = 'project-grid';
+
+      // left (info)
+      const left = document.createElement('div'); left.className = 'project-left';
+      const infoBox = document.createElement('div'); infoBox.className = 'info-box';
+
+      const aboutPart = document.createElement('div'); aboutPart.className = 'project-part';
+      const aboutH = document.createElement('h2'); aboutH.textContent = 'About This Game';
+      const aboutP = document.createElement('p'); aboutP.textContent = p.about || '';
+      aboutPart.appendChild(aboutH); aboutPart.appendChild(aboutP); infoBox.appendChild(aboutPart);
+
+      if (p.experience) {
+        const exp = document.createElement('div'); exp.className = 'project-part';
+        const h3 = document.createElement('h3'); h3.textContent = 'My Experience';
+        const pExp = document.createElement('p'); pExp.textContent = p.experience;
+        exp.appendChild(h3); exp.appendChild(pExp); infoBox.appendChild(exp);
+      }
+
+      if (p.contributions) {
+        const contrib = document.createElement('div'); contrib.className = 'project-part';
+        const h3c = document.createElement('h3'); h3c.textContent = 'My Contributions';
+        const pCon = document.createElement('p'); pCon.textContent = p.contributions;
+        contrib.appendChild(h3c); contrib.appendChild(pCon); infoBox.appendChild(contrib);
+      }
+
+      left.appendChild(infoBox);
+      grid.appendChild(left);
+
+      // right (media + CTA)
+      const right = document.createElement('div'); right.className = 'project-right';
+
+      const cwrap = document.createElement('div'); cwrap.className = 'project-cta-wrap';
+      const cta = document.createElement('a'); cta.className = 'contact-bar github project-cta';
+      cta.href = p.github || '#'; cta.target = '_blank'; cta.rel = 'noopener noreferrer';
+      const icon = document.createElement('img'); icon.className = 'contact-icon'; icon.src = 'images/github.png'; icon.alt = 'GitHub';
+      cta.appendChild(icon); cta.appendChild(document.createTextNode(' View on GitHub'));
+      cwrap.appendChild(cta); right.appendChild(cwrap);
+
+      const mediaPart = document.createElement('div'); mediaPart.className = 'project-part';
+      const h2m = document.createElement('h2'); h2m.textContent = (p.trailerLabel || 'Trailer'); mediaPart.appendChild(h2m);
+      if (p.trailer) {
+        const vid = document.createElement('video'); vid.className = 'hero'; vid.controls = true;
+        const src = document.createElement('source'); src.src = p.trailer; src.type = 'video/mp4'; vid.appendChild(src);
+        mediaPart.appendChild(vid);
+      } else if (p.image) {
+        const img = document.createElement('img'); img.className = 'hero'; img.src = p.image; img.alt = p.title; mediaPart.appendChild(img);
+      }
+      right.appendChild(mediaPart);
+
+      grid.appendChild(right);
+
+      // Assemble
+      panel.appendChild(titleBlock);
+      panel.appendChild(grid);
+      list.appendChild(panel);
+    });
+
+    // if id present, scroll into view
+    if (id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({behavior:'smooth'});
+    }
+
+  } catch (err) {
+    const list = document.getElementById('list');
+    list.innerHTML = '<p style="padding:1.25rem;color:#f88">Error loading projects.json</p>';
+    console.error(err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', load);
+</script>
+
+</body>
+</html>

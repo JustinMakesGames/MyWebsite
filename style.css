@@ -421,12 +421,27 @@ section h2 {
     margin-top: 0.25rem; /* small gap after the heading */
 }
 
-/* make GitHub contact-bars more contrasting */
+/* GitHub base matches other contact bars; hover keeps purple glow */
 .contact-bar.github {
-    background: linear-gradient(90deg, rgba(120,60,255,0.95), rgba(66,176,255,0.85));
-    color: #ffffff;
-    border-left-color: rgba(179,123,255,0.9);
-    box-shadow: 0 8px 30px rgba(102,60,180,0.18), 0 0 36px rgba(66,176,255,0.12);
+    background: #141418; /* same base as other contact bars */
+    color: var(--site-text);
+    border-left-color: transparent;
+    box-shadow: 0 0 12px rgba(0, 150, 255, 0.2);
+}
+
+/* Resume contact-bar uses the same hover treatment as other contact buttons */
+.contact-bar.resume {
+    /* base looks like other contact bars */
+    background: #141418;
+    color: var(--site-text);
+    border-left-color: transparent;
+    box-shadow: 0 0 12px rgba(0,150,255,0.2);
+}
+
+.contact-bar.resume:hover {
+    transform: translateX(5px);
+    border-color: #ffb86b; /* warm accent for resume */
+    box-shadow: 0 0 20px rgba(255,184,107,0.18);
 }
 
 /* Back button placed inside project panel top-left */
