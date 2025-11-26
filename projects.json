@@ -57,7 +57,7 @@
     "experience": "I got to learn how to make the ship move well in VR. ",
     "contributions": "Core cooking mechanics, inventory flow, and leaderboard networking.",
     "trailer": "videos/DeliciousAndOceanTrailer.mp4",
-    "github": "#",
+    "github": "https://github.com/JustinMakesGames/Delicious-and-Ocean",
     "image": "images/DeliciousAndOcean.png"
   }
   ,
@@ -70,7 +70,7 @@
     "experience": "I want to learn how to make a good physics system for a kart racer game, while also having AI racers. For me, this is a challenging project, but I am certainly motivated to make it the best I can.",
     "contributions": "I am doing all the programming for this project.",
     "trailer": "videos/BuildAndRaceGameplay.mp4",
-    "github": "#",
+    "github": "https://github.com/JustinMakesGames/BuildAndRace",
     "image": "images/BuildAndRace.png"
   }
 ]
