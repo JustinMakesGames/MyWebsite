@@ -4,9 +4,9 @@
     "title": "Cat Party",
     "subtitle": "Board game with minigames",
     "tags": ["Unity", "C#"],
-    "about": "Cat Party is a game where you play on a board and collect yarn balls. Players compete in minigames between turns to collect bonuses and the player with the most yarn wins.",
-    "experience": "Practiced creating CPU players and tuning minigame interactions.",
-    "contributions": "All programming, AI player behavior, and minigame integration.",
+    "about": "Cat Party is a game where you play on a board and collect yarn balls. Players compete in minigames between turns to collect bonuses and the player with the most yarn balls at the end wins.",
+    "experience": "I practiced creating CPU players and tuning minigame interactions.",
+    "contributions": "All the programming has been done by me.",
     "trailer": "videos/CatPartyTrailer.mp4",
     "github": "https://github.com/JustinMakesGames/Cat-Party",
     "image": "images/CatPartyImage.png"
@@ -30,8 +30,8 @@
     "subtitle": "Tower defense as a bee",
     "tags": ["Unity", "C#"],
     "about": "Honey Towers is a tower defense game where you defend your hive from waves of ants and wasps using various towers and upgrades.",
-    "experience": "Implemented enemy waves, tower behavior, and upgrade systems.",
-    "contributions": "Core gameplay, enemy wave scripting, and balancing.",
+    "experience": "I learned to implement tower defense mechanics, including enemy wave management and tower upgrades.",
+    "contributions": "I contributed to all the programming in this project.",
     "trailer": "videos/HoneyTowersTrailer.mp4",
     "github": "https://github.com/JustinMakesGames/HoneyTowers",
     "image": "images/HoneyTowers.png"
