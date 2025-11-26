@@ -33,7 +33,7 @@
     "experience": "Implemented enemy waves, tower behavior, and upgrade systems.",
     "contributions": "Core gameplay, enemy wave scripting, and balancing.",
     "trailer": "videos/HoneyTowersTrailer.mp4",
-    "github": "#",
+    "github": "https://github.com/JustinMakesGames/HoneyTowers",
     "image": "images/HoneyTowers.png"
   },
   {
@@ -54,8 +54,8 @@
     "subtitle": "VR monster hunting and cooking",
     "tags": ["Unity", "C#"],
     "about": "Delicious and Ocean is a VR game where you are on a ship on the hunt for giant monsters. You can use spears on the ship and throw them to the monster to damage it. You can also collect smaller monsters to cook and eat. This will refill your food bar.",
-    "experience": "I got to learn how to make the ship move well in VR. ",
-    "contributions": "Core cooking mechanics, inventory flow, and leaderboard networking.",
+    "experience": "I got to learn how to make the ship move well in VR. I also learned how to have better interactions in VR with different objects.",
+    "contributions": "I made the ship movement, cooking system and one boss monster behaviour.",
     "trailer": "videos/DeliciousAndOceanTrailer.mp4",
     "github": "https://github.com/JustinMakesGames/Delicious-and-Ocean",
     "image": "images/DeliciousAndOcean.png"
@@ -70,6 +70,7 @@
     "experience": "I want to learn how to make a good physics system for a kart racer game, while also having AI racers. For me, this is a challenging project, but I am certainly motivated to make it the best I can.",
     "contributions": "I am doing all the programming for this project.",
     "trailer": "videos/BuildAndRaceGameplay.mp4",
+    "trailerLabel": "Gameplay",
     "github": "https://github.com/JustinMakesGames/BuildAndRace",
     "image": "images/BuildAndRace.png"
   }

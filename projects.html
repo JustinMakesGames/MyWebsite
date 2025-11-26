@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Projects (JSON)</title>
+  <title>Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -34,6 +34,14 @@ async function load() {
     const params = new URL(window.location.href).searchParams;
     const id = params.get('id');
     const items = id ? projects.filter(p => p.id === id) : projects;
+
+    // set the browser tab title: when viewing a single project use its title
+    if (id) {
+      if (items.length > 0) document.title = items[0].title || 'Project';
+      else document.title = 'Project';
+    } else {
+      document.title = 'Projects';
+    }
 
     if (id && items.length === 0) {
       list.innerHTML = '<p style="padding:1.25rem;color:#f88">Project not found.</p>';
