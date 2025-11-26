@@ -5,59 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pouventure</title>
     <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<header>Pouventure - Project Details</header>
+<header class="site-header">
+    <div class="site-title">Justin la Faille</div>
+    <nav>
+        <a href="index.html">About Me</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contacts">Contact</a>
+    </nav>
+</header>
 
-<nav>
-<a href="index.html">About Me</a>
-<a href="index.html#projects">Projects</a>
-<a href="index.html#contacts">Contact</a>
-</nav>
+<main id="project">
+    <a href="index.html" class="back-button">← Back</a>
+    <div class="project-title">
+        <h1>Pouventure</h1>
+        <p class="project-subtitle">Turn-based dungeon adventure</p>
+        <div class="project-meta">
+            <span class="lang">Unity</span>
+            <span class="tag">C#</span>
+        </div>
+    </div>
 
-<section>
-    <h2>About The Game</h2>
-    <p>Pouventure is a turn based combat game where you play as a girl named Avery.
-        The goal of the game is to fight monsters in a random generated dungeon and get to the 
-        end to save Pou. 
-        <br>
-        It features 3 enemies with all different kinds of attacks, 
-        a boss fight at the end
-        and a random generated dungeon system. 
-    </p>
-</section>
-<section>
-    <h2>My experience</h2>
-    <p>This is my first time I made a turn based combat game. 
-        I got to learn how to keep track of the player stats and enemy stats.
-        I have also created a random dungeon generator in this project.
-    </p>
-</section>
+    <div class="project-grid">
+        <div class="project-left">
+            <div class="info-box">
+                <div class="project-part">
+                    <h2>About The Game</h2>
+                    <p>Pouventure is a turn based combat game where you play as a girl named Avery. The goal of the game is to fight monsters in a random generated dungeon and get to the end to save Pou. It features 3 enemies with all different kinds of attacks, a boss fight at the end and a random generated dungeon system.</p>
+                </div>
+                    <div class="project-part">
+                        <h3>My experience</h3>
+                        <p>This is my first time I made a turn based combat game. I got to learn how to keep track of the player stats and enemy stats. I have also created a random dungeon generator in this project.</p>
+                    </div>
 
-<section>
-    <h2>My Contributions</h2>
-    <p>I made the player movement, dungeon generation,
-        battle system and the enemy behaviour.
-    </p>
-</section>
+                    <div class="project-part">
+                        <h3>My Contributions</h3>
+                        <p>I made the player movement, dungeon generation, battle system and the enemy behaviour.</p>
+                    </div>
+            </div>
+        </div>
 
-<section>
-    <h2>Gameplay</h2>
-    <video controls>
-        <source src="videos/PouventureGameplayFootage.mp4" type="video/mp4">
-    </video>
-</section>
-
-<section>
-    <h2>GitHub Repository</h2>
-    <p>
-        Check out the code for Pouventure on GitHub: 
-        <a href="https://github.com/JustinMakesGames/PouVenture" target="_blank" rel="noopener noreferrer">
-            https://github.com/JustinMakesGames/PouVenture
-        </a>
-    </p>
-</section>
-
-
+        <div class="project-right">
+            <div class="project-cta-wrap">
+                <a class="contact-bar github project-cta" href="https://github.com/JustinMakesGames/PouVenture" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github.png" alt="GitHub" class="contact-icon"> View on GitHub
+                </a>
+            </div>
+            <div class="project-part">
+                <h2>Gameplay</h2>
+                <video controls class="hero">
+                    <source src="videos/PouventureGameplayFootage.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</main>
 
 </body>
 </html>
+
+    </body>
+    </html>

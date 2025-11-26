@@ -7,53 +7,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>Honey Towers - Project Details</header>
+<header class="site-header">
+    <div class="site-title">Justin la Faille</div>
+    <nav>
+        <a href="index.html">About Me</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contacts">Contact</a>
+    </nav>
+</header>
+<main id="project">
+    <a href="index.html" class="back-button">← Back</a>
+    <div class="project-title">
+        <h1>Honey Towers</h1>
+        <p class="project-subtitle">Tower defense — personal project</p>
+        <div class="project-meta">
+            <span class="lang">Unity</span>
+            <span class="tag">C#</span>
+        </div>
+    </div>
 
-<nav>
-<a href="index.html">About Me</a>
-<a href="index.html#projects">Projects</a>
-<a href="index.html#contacts">Contact</a>
-</nav>
+    <div class="project-grid">
+        <div class="project-left">
+            <div class="info-box">
+                <div class="project-part">
+                    <h2>About This Game</h2>
+                    <p>Honey Towers is a tower defense game where you defend your hive from wasps and ants.
+                        You play as a bee holding a box and you can fly around placing your towers.
+                        You can collect honey around the map to buy towers at the shop.
+                    </p>
+                </div>
 
-<section>
-    <h2>About This Game</h2>
-    <p>Honey Towers is a tower defense game where you defend your hive from wasps and ants.
-        You play as a bee holding a box and you can fly around placing your towers.
-        You can collect honey around the map to buy towers at the shop.
+                <div class="project-part">
+                    <h3>My experience</h3>
+                    <p>I enjoyed working on this project as I learned how to make a tower defense system.</p>
+                </div>
 
-    </p>
-</section>
+                <div class="project-part">
+                    <h3>My Contributions</h3>
+                    <p>I contributed to all the programming of this project.</p>
+                </div>
+            </div>
+        </div>
 
-<section>
-    <h2>My experience</h2>
-    <p>I enjoyed working on this project as I learned how to make a tower defense system.
-
-    </p>
-</section>
-
-<section>
-    <h2>My Contributions</h2>
-    <p>I contributed to all the programming of this project.</p>
-</section>
-
-<section>
-    <h2>Trailer</h2>
-    <video controls>
-        <source src="videos/HoneyTowersTrailer.mp4" type="video/mp4">
-    </video>
-</section>
-
-<section>
-    <h2>GitHub Repository</h2>
-    <p>
-        Check out the code for Honey Towers on GitHub: 
-        <a href="https://github.com/JustinMakesGames/HoneyTowers" target="_blank" rel="noopener noreferrer">
-            https://github.com/JustinMakesGames/HoneyTowers
-        </a>
-    </p>
-</section>
-
-
-
+        <div class="project-right">
+            <div class="project-cta-wrap">
+                <a class="contact-bar github project-cta" href="https://github.com/JustinMakesGames/HoneyTowers" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github.png" alt="GitHub" class="contact-icon"> View on GitHub
+                </a>
+            </div>
+            <div class="project-part">
+                <h2>Trailer</h2>
+                <video controls class="hero">
+                    <source src="videos/HoneyTowersTrailer.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>

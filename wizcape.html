@@ -7,52 +7,61 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>Wizcape - Project Details</header>
+<header class="site-header">
+    <div class="site-title">Justin la Faille</div>
+    <nav>
+        <a href="index.html">About Me</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contacts">Contact</a>
+    </nav>
+</header>
+<main id="project">
+    <a href="index.html" class="back-button">← Back</a>
+    <div class="project-title">
+        <h1>Wizcape</h1>
+        <p class="project-subtitle">Roguelike dungeon crawler</p>
+        <div class="project-meta">
+            <span class="lang">Unity</span>
+            <span class="tag">C#</span>
+        </div>
+    </div>
 
-<nav>
-<a href="index.html">About Me</a>
-<a href="index.html#projects">Projects</a>
-<a href="index.html#contacts">Contact</a>
-</nav>
+    <div class="project-grid">
+        <div class="project-left">
+            <div class="info-box">
+                <div class="project-part">
+                    <h2>About This Game</h2>
+                    <p>Wizcape is a game where you play in a randomly generated dungeon. You fight monsters with weapons you find along the way. After all the rooms, there is a boss fight at the end.</p>
+                </div>
 
-<section>
-    <h2>About This Game</h2>
-    <p>Wizcape is a game where you play in a randomly generated dungeon. 
-        You fight monsters with weapons you find along the way. After all the rooms,
-        there is a boss fight at the end.
-    </p>
-</section>
+                <div class="project-part">
+                    <h3>My experience</h3>
+                    <p>Wizcape is a game where I learned to use a proper real time weapon system.</p>
+                </div>
 
-<section>
-    <h2>My experience</h2>
-    <p>Wizcape is a game where I learned to use a proper real time weapon system.
-    </p>
-</section>
+                <div class="project-part">
+                    <h3>My Contributions</h3>
+                    <p>My contributions to the project are the movement, the pick up system, the weapon system and the inventory system.</p>
+                </div>
+            </div>
+        </div>
 
-<section>
-    <h2>My Contributions</h2>
-    <p>My contributions to the project are the movement, the pick up system, 
-        the weapon system and the inventory system.</p>
-</section>
+        <div class="project-right">
+            <div class="project-cta-wrap">
+                <a class="contact-bar github project-cta" href="https://github.com/SedKety/Wiscape" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github.png" alt="GitHub" class="contact-icon"> View on GitHub
+                </a>
+            </div>
+            <div class="project-part">
+                <h2>Trailer</h2>
+                <video controls class="hero">
+                    <source src="videos/Wizcape Trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
 
-<section>
-    <h2>Trailer</h2>
-    <video controls>
-        <source src="videos/Wizcape Trailer.mp4" type="video/mp4">
-    </video>
-</section>
-
-<section>
-    <h2>GitHub Repository</h2>
-    <p>
-        Check out the code for Cat Party on GitHub: 
-        <a href="https://github.com/SedKety/Wiscape" target="_blank" rel="noopener noreferrer">
-            https://github.com/SedKety/Wiscape
-        </a>
-    </p>
-</section>
-
-
+</main>
 
 </body>
 </html>
