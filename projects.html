@@ -121,11 +121,14 @@ async function load() {
       const right = document.createElement('div'); right.className = 'project-right';
 
       const cwrap = document.createElement('div'); cwrap.className = 'project-cta-wrap';
-      const cta = document.createElement('a'); cta.className = 'contact-bar github project-cta';
-      cta.href = p.github || '#'; cta.target = '_blank'; cta.rel = 'noopener noreferrer';
-      const icon = document.createElement('img'); icon.className = 'contact-icon'; icon.src = 'images/github.png'; icon.alt = 'GitHub';
-      cta.appendChild(icon); cta.appendChild(document.createTextNode(' View on GitHub'));
-      cwrap.appendChild(cta); right.appendChild(cwrap);
+      if (p.github) {
+        const cta = document.createElement('a'); cta.className = 'contact-bar github project-cta';
+        cta.href = p.github; cta.target = '_blank'; cta.rel = 'noopener noreferrer';
+        const icon = document.createElement('img'); icon.className = 'contact-icon'; icon.src = 'images/github.png'; icon.alt = 'GitHub';
+        cta.appendChild(icon); cta.appendChild(document.createTextNode(' View on GitHub'));
+        cwrap.appendChild(cta);
+      }
+      right.appendChild(cwrap);
 
       const mediaPart = document.createElement('div'); mediaPart.className = 'project-part';
       const h2m = document.createElement('h2'); h2m.textContent = (p.trailerLabel || 'Trailer'); mediaPart.appendChild(h2m);

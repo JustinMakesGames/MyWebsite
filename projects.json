@@ -66,12 +66,26 @@
     "title": "Build and Race",
     "subtitle": "Create tracks and race them",
     "tags": ["Unity", "C#", "Level Editor"],
-    "about": "Build And Race is a video game where the players can build their own racetrack. Currently, this game is not finished as I am making this game for a schoolproject right now. ",
-    "experience": "I want to learn how to make a good physics system for a kart racer game, while also having AI racers. For me, this is a challenging project, but I am certainly motivated to make it the best I can.",
+    "about": "Build And Race is a video game where the players can build their own racetrack.",
+    "experience": "I wanted to learn how to make a good physics system for a kart racer game, while also having AI racers. For me, this is a challenging project, but I am certainly motivated to make it the best I can.",
     "contributions": "I am doing all the programming for this project.",
     "trailer": "videos/BuildAndRaceGameplay.mp4",
     "trailerLabel": "Gameplay",
     "github": "https://github.com/JustinMakesGames/BuildAndRace",
+    "image": "images/BuildAndRace.png"
+  }
+  ,
+  {
+    "id": "bhv",
+    "title": "BHV Assignments",
+    "subtitle": "Tutorial for the BHV course",
+    "tags": ["VR", "Unity", "Tutorial", "FireExtinguishing", "VR-Innovations"],
+    "about": "For my internship at VR-Innovations, we had to make BHV tutorial course other companies could use. For this one, we had made a tutorial on how to use a fire extinguisher.",
+    "experience": "I wanted to learn how to make a learning experience in VR. I also wanted to learn how to make a fire system and a fire extinguishing system.",
+    "contributions": "I programmed the fire extinguishing itself + the fire system. I worked with 2 other interns at VR-Innovations. Wess van Wijhe did more of the programming and Minh Thu Pham did the 3D art.",
+    "trailer": "videos/FireMRVideo.mp4",
+    "trailerLabel": "Gameplay",
+    "github": "",
     "image": "images/BuildAndRace.png"
   }
 ]
